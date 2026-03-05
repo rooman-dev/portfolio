@@ -44,7 +44,7 @@ export default function Home() {
         {/* ════ HOME ════════════════════════════════════════ */}
         <section
           id="home"
-          className="min-h-screen flex items-center"
+          className="min-h-screen flex items-center snap-start"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col md:flex-row items-center gap-12 md:gap-10 py-24 pt-32">
           {/* Left — text content */}
@@ -179,7 +179,7 @@ export default function Home() {
         {/* ════ ABOUT — WHY INNOVATE + BIO ═════════════════ */}
         <section
           id="about"
-          className="min-h-screen flex items-center"
+          className="min-h-screen flex items-center snap-start"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
@@ -308,7 +308,7 @@ export default function Home() {
         {/* ════ SELECTED WORKS ═════════════════════════════ */}
         <section
           id="projects"
-          className="min-h-screen flex items-center"
+          className="min-h-screen flex items-center snap-start"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
@@ -337,7 +337,7 @@ export default function Home() {
         {/* ════ CONTACT ════════════════════════════════════ */}
         <section
           id="contact"
-          className="min-h-screen flex items-center"
+          className="min-h-screen flex items-center snap-start"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
