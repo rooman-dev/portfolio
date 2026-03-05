@@ -147,6 +147,10 @@ export default function Home() {
             >
               <a
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
               >
                 Hire Me ?
@@ -216,6 +220,10 @@ export default function Home() {
           >
             <a
               href="#projects"
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
             >
               Inspiration ?

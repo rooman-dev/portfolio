@@ -9,8 +9,8 @@ import { useState } from "react";
 
 const links = [
   { label: "Home", href: "#home" },
-  { label: "Projects", href: "#projects" },
   { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -54,6 +54,10 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => {
+                e.preventDefault();
+                document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+              }}
               className="px-5 py-2 text-[14px] font-medium text-white/60 tracking-[0.15em] uppercase transition-colors duration-300 hover:text-white shrink-0"
             >
               {link.label}
