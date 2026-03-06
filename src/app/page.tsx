@@ -149,7 +149,7 @@ export default function Home() {
                     e.preventDefault();
                     window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "contact" }));
                   }}
-                  className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+                  className="px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
                 >
                   Hire Me ?
                 </a>
@@ -206,7 +206,7 @@ export default function Home() {
                 e.preventDefault();
                 window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "projects" }));
               }}
-              className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+              className="px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
             >
               Inspiration ?
             </a>
@@ -278,7 +278,7 @@ export default function Home() {
               href="https://docs.google.com/document/d/your-cv-id"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+              className="px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
             >
               Download CV ?
             </a>
@@ -376,7 +376,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className="self-start mt-4 px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+                className="self-start mt-4 px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
               >
                 Send Message ?
               </button>

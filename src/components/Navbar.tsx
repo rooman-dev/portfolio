@@ -72,7 +72,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         onClick={() => setShowExp(!showExp)}
-        className="fixed top-6 right-0 z-50 bg-white text-black text-[14px] font-medium tracking-[1em] uppercase hover:bg-white/90 transition-all duration-300 shadow-lg"
+        className="fixed top-6 right-0 z-50 bg-white text-black text-[14px] font-medium tracking-[1.5em] uppercase hover:bg-white/90 transition-all duration-300 shadow-lg"
         style={{ paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.5rem', paddingBottom: '0.5rem' }}
       >
         {showExp ? "Close" : "Experience"}

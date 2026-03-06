@@ -59,7 +59,7 @@ export default function ProjectCard({
           href={link || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 text-center"
+          className="shrink-0 px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300 text-center"
         >
           View Project ?
         </a>
