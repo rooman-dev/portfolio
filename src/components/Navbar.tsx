@@ -84,7 +84,7 @@ function Section({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
     >
-      <h3 className="text-[10px] tracking-[0.5em] uppercase text-white/30 mb-5">
+      <h3 className="text-[11px] tracking-[0.5em] uppercase text-white/30 mb-6 pb-2 border-b border-white/5">
         {title}
       </h3>
       {children}
@@ -171,9 +171,22 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="fixed top-0 right-0 z-50 h-full w-[90vw] md:w-[40vw] bg-black border-l border-white/10 overflow-y-auto"
+              onWheel={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
+              onTouchMove={(e) => e.stopPropagation()}
+              onTouchEnd={(e) => e.stopPropagation()}
+              className="fixed top-0 right-0 z-50 h-full w-[92vw] md:w-[45vw] bg-[#0a0a0a] border-l border-white/10 overflow-y-auto"
             >
-              <div className="p-8 sm:p-12 pt-24 flex flex-col gap-14">
+              {/* Close button inside panel */}
+              <button
+                onClick={() => setShowExp(false)}
+                className="absolute top-8 right-8 z-10 text-white/40 hover:text-white transition-colors text-2xl leading-none"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+
+              <div className="p-10 sm:p-14 lg:p-16 pt-24 flex flex-col gap-16">
 
                 {/* ── Header ──────────────────────────── */}
                 <motion.div
@@ -181,27 +194,27 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                 >
-                  <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">
+                  <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
                     EXPERIENCE
                   </h2>
-                  <div className="w-12 h-[2px] bg-white" />
+                  <div className="w-16 h-[2px] bg-white" />
                 </motion.div>
 
                 {/* ── Stats grid ──────────────────────── */}
                 <Section title="At a Glance" delay={0.15}>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-5">
                     {stats.map((s, i) => (
                       <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
-                        className="border border-white/10 p-5 text-center"
+                        className="border border-white/10 bg-white/[0.02] p-6 sm:p-7 text-center hover:border-white/20 transition-colors duration-300"
                       >
-                        <span className="block text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                        <span className="block text-3xl sm:text-4xl font-bold text-white tracking-tight">
                           {s.value}
                         </span>
-                        <span className="block text-[10px] sm:text-xs text-white/40 tracking-[0.2em] uppercase mt-1">
+                        <span className="block text-[10px] sm:text-xs text-white/40 tracking-[0.25em] uppercase mt-2">
                           {s.label}
                         </span>
                       </motion.div>
@@ -211,16 +224,16 @@ export default function Navbar() {
 
                 {/* ── Education ────────────────────────── */}
                 <Section title="Education" delay={0.25}>
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-8">
                     {education.map((edu, i) => (
-                      <div key={i} className="border-t border-white/10 pt-5">
-                        <span className="text-[10px] tracking-[0.35em] uppercase text-white/25 block mb-2">
+                      <div key={i} className="border-l-2 border-white/15 pl-6 py-1">
+                        <span className="text-[10px] tracking-[0.4em] uppercase text-white/25 block mb-2">
                           {edu.period}
                         </span>
-                        <h4 className="text-base sm:text-lg font-bold text-white mb-0.5">
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
                           {edu.degree}
                         </h4>
-                        <p className="text-white/40 text-sm tracking-wide mb-2">
+                        <p className="text-white/40 text-sm tracking-wide mb-3">
                           {edu.school}
                         </p>
                         <p className="text-white/45 text-sm leading-relaxed">
@@ -233,16 +246,16 @@ export default function Navbar() {
 
                 {/* ── Work Experience ──────────────────── */}
                 <Section title="Work Experience" delay={0.35}>
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-8">
                     {experience.map((exp, i) => (
-                      <div key={i} className="border-t border-white/10 pt-5">
-                        <span className="text-[10px] tracking-[0.35em] uppercase text-white/25 block mb-2">
+                      <div key={i} className="border-l-2 border-white/15 pl-6 py-1">
+                        <span className="text-[10px] tracking-[0.4em] uppercase text-white/25 block mb-2">
                           {exp.period}
                         </span>
-                        <h4 className="text-base sm:text-lg font-bold text-white mb-0.5">
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-1">
                           {exp.role}
                         </h4>
-                        <p className="text-white/40 text-sm tracking-wide mb-2">
+                        <p className="text-white/40 text-sm tracking-wide mb-3">
                           {exp.company}
                         </p>
                         <p className="text-white/45 text-sm leading-relaxed">
@@ -255,21 +268,21 @@ export default function Navbar() {
 
                 {/* ── Certificates ─────────────────────── */}
                 <Section title="Certificates" delay={0.45}>
-                  <div className="flex flex-col gap-4">
+                  <div className="flex flex-col gap-5">
                     {certificates.map((cert, i) => (
                       <div
                         key={i}
-                        className="flex items-start justify-between border-t border-white/10 pt-4"
+                        className="flex items-start justify-between border border-white/8 bg-white/[0.02] p-5 hover:border-white/15 transition-colors duration-300"
                       >
                         <div>
                           <h4 className="text-sm sm:text-base font-semibold text-white">
                             {cert.title}
                           </h4>
-                          <p className="text-white/35 text-xs tracking-wide mt-0.5">
+                          <p className="text-white/35 text-xs tracking-wide mt-1">
                             {cert.issuer}
                           </p>
                         </div>
-                        <span className="text-[10px] tracking-[0.3em] text-white/20 uppercase shrink-0 ml-4 mt-1">
+                        <span className="text-[10px] tracking-[0.3em] text-white/20 uppercase shrink-0 ml-6 mt-1">
                           {cert.year}
                         </span>
                       </div>
@@ -279,13 +292,13 @@ export default function Navbar() {
 
                 {/* ── Achievements ─────────────────────── */}
                 <Section title="Achievements" delay={0.55}>
-                  <ul className="flex flex-col gap-3">
+                  <ul className="flex flex-col gap-4">
                     {achievements.map((a, i) => (
                       <li
                         key={i}
-                        className="flex items-start gap-3 text-white/50 text-sm leading-relaxed"
+                        className="flex items-start gap-4 text-white/50 text-sm sm:text-base leading-relaxed"
                       >
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-white/30 rotate-45" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-white/40 rotate-45" />
                         {a}
                       </li>
                     ))}
@@ -293,7 +306,7 @@ export default function Navbar() {
                 </Section>
 
                 {/* bottom spacer for scroll comfort */}
-                <div className="h-8" />
+                <div className="h-16" />
               </div>
             </motion.div>
           </>
