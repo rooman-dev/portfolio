@@ -16,7 +16,7 @@ export default function HeroImage() {
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="relative w-full h-[70vh] md:h-[92vh] overflow-hidden rounded-sm"
+      className="relative w-full h-[70vh] md:h-[92vh] overflow-hidden"
     >
       <Image
         src="/profile.png"
@@ -37,8 +37,7 @@ export default function HeroImage() {
       {/* Left fade */}
       <div className="absolute inset-y-0 left-0 w-32 md:w-44 bg-gradient-to-r from-black to-transparent pointer-events-none" />
 
-      {/* Right fade */}
-      <div className="absolute inset-y-0 right-0 w-24 md:w-36 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+      {/* Right fade — removed so image bleeds to edge */}
     </motion.div>
   );
 }

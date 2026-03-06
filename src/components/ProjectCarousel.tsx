@@ -50,8 +50,8 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
   return (
     <div className="relative w-full">
-      {/* Project content — horizontal layout with page indicator */}
-      <div className="relative overflow-hidden flex items-start gap-8" style={{ minHeight: "320px" }}>
+      {/* Project content */}
+      <div className="relative overflow-hidden" style={{ minHeight: "320px" }}>
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={page}
@@ -64,46 +64,32 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               x: { type: "tween", duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
               opacity: { duration: 0.3 },
             }}
-            className="w-full flex flex-col md:flex-row md:items-start md:justify-between gap-8"
+            className="w-full"
           >
-            {/* Left — project info */}
-            <div className="flex-1">
-              {/* Index */}
-              <span className="text-xs tracking-[0.4em] uppercase text-white/30 mb-6 block">
-                {project.index}
-              </span>
+            {/* Index */}
+            <span className="text-xs tracking-[0.4em] uppercase text-white/30 mb-6 block">
+              {project.index}
+            </span>
 
-              {/* Title */}
-              <h3 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-                {project.title}
-              </h3>
+            {/* Title */}
+            <h3 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8">
+              {project.title}
+            </h3>
 
-              {/* Description */}
-              <p className="text-white/45 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
-                {project.description}
-              </p>
+            {/* Description */}
+            <p className="text-white/45 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+              {project.description}
+            </p>
 
-              {/* Button */}
-              <a
-                href={project.link || "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
-              >
-                View Project →
-              </a>
-            </div>
-
-            {/* Right — large page indicator */}
-            <div className="hidden md:flex items-baseline gap-3 flex-shrink-0 pt-4">
-              <span className="text-white text-7xl lg:text-8xl font-bold leading-none">
-                {String(page + 1).padStart(2, "0")}
-              </span>
-              <span className="text-white/20 text-3xl lg:text-4xl font-light">/</span>
-              <span className="text-white/20 text-3xl lg:text-4xl font-light">
-                {String(projects.length).padStart(2, "0")}
-              </span>
-            </div>
+            {/* Button */}
+            <a
+              href={project.link || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+            >
+              View Project →
+            </a>
           </motion.div>
         </AnimatePresence>
       </div>
