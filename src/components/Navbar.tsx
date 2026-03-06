@@ -216,9 +216,9 @@ export default function Navbar() {
                 <div>
                   <TypingText
                     as="h2"
-                    hoverStyle="outline"
+                    hoverStyle="none"
                     onMount
-                    className="text-4xl sm:text-5xl font-bold tracking-tight"
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight"
                     speed={0.06}
                     delay={0.2}
                   >
