@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import TypingText from "./TypingText";
 
 /* ──────────────────────────────────────────────────────────
    Navbar — Floating centered nav + Experience button
@@ -96,6 +97,32 @@ function Section({
 
 export default function Navbar() {
   const [showExp, setShowExp] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  /* Stop wheel/touch events from reaching FullpageScroll */
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel || !showExp) return;
+
+    const stopWheel = (e: WheelEvent) => {
+      e.stopPropagation();
+    };
+    const stopTouch = (e: TouchEvent) => {
+      e.stopPropagation();
+    };
+
+    panel.addEventListener("wheel", stopWheel, { passive: false });
+    panel.addEventListener("touchstart", stopTouch, { passive: true });
+    panel.addEventListener("touchmove", stopTouch, { passive: true });
+    panel.addEventListener("touchend", stopTouch, { passive: true });
+
+    return () => {
+      panel.removeEventListener("wheel", stopWheel);
+      panel.removeEventListener("touchstart", stopTouch);
+      panel.removeEventListener("touchmove", stopTouch);
+      panel.removeEventListener("touchend", stopTouch);
+    };
+  }, [showExp]);
 
   return (
     <>
@@ -162,43 +189,48 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={() => setShowExp(false)}
-              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm"
+              className="fixed inset-0 z-40 bg-black/70"
             />
 
             {/* Panel */}
             <motion.div
+              ref={panelRef}
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              onWheel={(e) => e.stopPropagation()}
-              onTouchStart={(e) => e.stopPropagation()}
-              onTouchMove={(e) => e.stopPropagation()}
-              onTouchEnd={(e) => e.stopPropagation()}
-              className="fixed top-0 right-0 z-50 h-full w-[92vw] md:w-[45vw] bg-[#0a0a0a] border-l border-white/10 overflow-y-auto"
+              className="fixed top-0 right-0 z-50 h-full w-[92vw] md:w-[45vw] bg-black border-l border-white/10 overflow-y-auto"
             >
               {/* Close button inside panel */}
               <button
                 onClick={() => setShowExp(false)}
-                className="absolute top-8 right-8 z-10 text-white/40 hover:text-white transition-colors text-2xl leading-none"
+                className="absolute top-7 right-8 z-10 text-white/40 hover:text-white transition-colors text-2xl leading-none"
                 aria-label="Close"
               >
                 ✕
               </button>
 
-              <div className="p-10 sm:p-14 lg:p-16 pt-24 flex flex-col gap-16">
+              <div className="px-10 sm:px-14 lg:px-16 pt-20 pb-10 flex flex-col gap-16">
 
-                {/* ── Header ──────────────────────────── */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
+                {/* ── Header — typewriter title ───────── */}
+                <div>
+                  <TypingText
+                    as="h2"
+                    hoverStyle="outline"
+                    onMount
+                    className="text-4xl sm:text-5xl font-bold tracking-tight"
+                    speed={0.06}
+                    delay={0.2}
+                  >
                     EXPERIENCE
-                  </h2>
-                  <div className="w-16 h-[2px] bg-white" />
-                </motion.div>
+                  </TypingText>
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                    className="w-16 h-[2px] bg-white origin-left mt-3"
+                  />
+                </div>
 
                 {/* ── Stats grid ──────────────────────── */}
                 <Section title="At a Glance" delay={0.15}>

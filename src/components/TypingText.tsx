@@ -34,7 +34,7 @@ export default function TypingText({
   children,
   as: Tag = "h2",
   className = "",
-  speed = 0.12,
+  speed = 0.06,
   delay = 0,
   hoverStyle = "solid",
   onMount = false,
