@@ -90,52 +90,22 @@ export default function Home() {
               {/* Line 1 — scrolls left */}
               <div className="overflow-hidden relative h-[28px]">
                 <div
-                  className="absolute whitespace-nowrap flex items-center gap-8 text-white/40 text-sm sm:text-base font-light"
-                  style={{ animation: 'ticker 18s linear infinite' }}
+                  className="ticker-track absolute whitespace-nowrap text-white/40 text-sm sm:text-base font-light"
+                  style={{ animation: 'ticker 25s linear infinite' }}
                 >
-                  <span>Bridging raw backend power with relentless user focus. I engineer scalable systems designed to dismantle real-world inefficiencies.</span>
-                  <span className="text-white/15">—</span>
-                  <span>Bridging raw backend power with relentless user focus. I engineer scalable systems designed to dismantle real-world inefficiencies.</span>
-                  <span className="text-white/15">—</span>
+                  Bridging raw backend power with relentless user focus. I engineer scalable systems designed to dismantle real-world inefficiencies. &mdash;&nbsp;
+                  Bridging raw backend power with relentless user focus. I engineer scalable systems designed to dismantle real-world inefficiencies. &mdash;&nbsp;
                 </div>
               </div>
 
               {/* Line 2 — scrolls right */}
               <div className="overflow-hidden relative h-[28px]">
                 <div
-                  className="absolute whitespace-nowrap flex items-center gap-8 text-white/40 text-sm sm:text-base font-light"
-                  style={{ animation: 'tickerReverse 22s linear infinite' }}
+                  className="ticker-track absolute whitespace-nowrap text-white/40 text-sm sm:text-base font-light"
+                  style={{ animation: 'tickerReverse 30s linear infinite' }}
                 >
-                  <span>Driven by logic. Refined by design. I engineer scalable, full-stack ecosystems that transform complex friction into effortless performance.</span>
-                  <span className="text-white/15">—</span>
-                  <span>Driven by logic. Refined by design. I engineer scalable, full-stack ecosystems that transform complex friction into effortless performance.</span>
-                  <span className="text-white/15">—</span>
-                </div>
-              </div>
-
-              {/* Line 3 — scrolls left */}
-              <div className="overflow-hidden relative h-[28px]">
-                <div
-                  className="absolute whitespace-nowrap flex items-center gap-8 text-white/40 text-sm sm:text-base font-light"
-                  style={{ animation: 'ticker 20s linear infinite' }}
-                >
-                  <span>Architecting logic. Designing function. I build high-performance software that turns complex problems into elegant, scalable solutions.</span>
-                  <span className="text-white/15">—</span>
-                  <span>Architecting logic. Designing function. I build high-performance software that turns complex problems into elegant, scalable solutions.</span>
-                  <span className="text-white/15">—</span>
-                </div>
-              </div>
-
-              {/* Line 4 — scrolls right */}
-              <div className="overflow-hidden relative h-[28px]">
-                <div
-                  className="absolute whitespace-nowrap flex items-center gap-8 text-white/40 text-sm sm:text-base font-light"
-                  style={{ animation: 'tickerReverse 16s linear infinite' }}
-                >
-                  <span>Translating complex backend architecture into sharp, scalable solutions. I build software that solves real-world friction.</span>
-                  <span className="text-white/15">—</span>
-                  <span>Translating complex backend architecture into sharp, scalable solutions. I build software that solves real-world friction.</span>
-                  <span className="text-white/15">—</span>
+                  Driven by logic. Refined by design. I engineer scalable, full-stack ecosystems that transform complex friction into effortless performance. &mdash;&nbsp;
+                  Driven by logic. Refined by design. I engineer scalable, full-stack ecosystems that transform complex friction into effortless performance. &mdash;&nbsp;
                 </div>
               </div>
             </motion.div>

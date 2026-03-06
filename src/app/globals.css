@@ -109,21 +109,27 @@ body {
 /* ───────────────────────────────────────────────────────
    Breaking news ticker
    ─────────────────────────────────────────────────────── */
+.ticker-track {
+  will-change: transform;
+  contain: layout style;
+  backface-visibility: hidden;
+}
+
 @keyframes ticker {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes tickerReverse {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -169,4 +175,5 @@ body {
 
 .scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
+  will-change: transform;
 }
