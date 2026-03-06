@@ -36,7 +36,7 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="bg-black h-full overflow-y-scroll snap-y snap-mandatory">
+    <div className="bg-black h-full overflow-y-scroll snap-y snap-proximity">
       <Navbar />
 
       <main>
