@@ -27,7 +27,6 @@
 
 html {
   height: 100%;
-  scroll-padding-top: 0;
 }
 
 body {
@@ -35,9 +34,7 @@ body {
   background: #000000;
   color: #ffffff;
   font-family: "Space Grotesk", sans-serif;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
+  overflow: hidden;
 }
 
 /* Custom scrollbar */
