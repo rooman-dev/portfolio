@@ -132,29 +132,28 @@ export default function Home() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
-              className="mt-14 flex gap-5"
-            >
-              <a
-                href="#contact"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "contact" }));
-                }}
-                className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
-              >
-                Hire Me ?
-              </a>
-            </motion.div>
-
           </div>
 
             {/* Right — profile image */}
-            <div className="w-full md:w-[50%] flex-shrink-0">
+            <div className="w-full md:w-[50%] flex-shrink-0 relative">
               <HeroImage />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="absolute bottom-4 right-4 z-10"
+              >
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "contact" }));
+                  }}
+                  className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+                >
+                  Hire Me ?
+                </a>
+              </motion.div>
             </div>
           </div>
         </section>
