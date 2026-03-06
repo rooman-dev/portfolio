@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollHighlight from "@/components/ScrollHighlight";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import HeroImage from "@/components/HeroImage";
 import FullpageScroll from "@/components/FullpageScroll";
 import Navbar from "@/components/Navbar";
@@ -301,18 +301,9 @@ export default function Home() {
             SELECTED WORKS
           </TypingText>
 
-          <div className="space-y-6">
-            {projects.map((project, i) => (
-              <ProjectCard
-                key={project.index}
-                index={project.index}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-                delay={i * 0.15}
-              />
-            ))}
-          </div>
+          <div className="h-16" />
+
+          <ProjectCarousel projects={projects} />
           </div>
         </section>
 
