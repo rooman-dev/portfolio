@@ -94,9 +94,11 @@ export default function FullpageScroll({ children }: FullpageScrollProps) {
     };
   }, [current, scrollTo]);
 
-  /* Keyboard support (arrow keys) */
+  /* Keyboard support (arrow keys) — skip when typing in form fields */
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement).tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       if (isScrolling.current) return;
       if (e.key === "ArrowDown" || e.key === "PageDown") {
         e.preventDefault();
