@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollHighlight from "@/components/ScrollHighlight";
-import ProjectCarousel from "@/components/ProjectCarousel";
+import ProjectCard from "@/components/ProjectCard";
 import HeroImage from "@/components/HeroImage";
 import FullpageScroll from "@/components/FullpageScroll";
 import Navbar from "@/components/Navbar";
@@ -33,27 +33,6 @@ const projects = [
       "A real-time, push-to-talk voice communication platform built with Python and Socket Programming for low-latency audio streaming.",
     link: "https://github.com/rooman-dev/VoiceSnap",
   },
-  {
-    index: "04",
-    title: "Kaikebo",
-    description:
-      "A personal finance management application built with C++ and Object-Oriented Programming principles, inspired by traditional Japanese budgeting methods.",
-    link: "https://github.com/rooman-dev/Kaikebo",
-  },
-  {
-    index: "05",
-    title: "Project 5",
-    description:
-      "Description coming soon.",
-    link: "#",
-  },
-  {
-    index: "06",
-    title: "Project 6",
-    description:
-      "Description coming soon.",
-    link: "#",
-  },
 ];
 
 export default function Home() {
@@ -68,9 +47,9 @@ export default function Home() {
           id="home"
           className="h-screen flex items-center overflow-hidden"
         >
-          <div className="w-full flex flex-col md:flex-row items-center">
+          <div className="mx-auto max-w-[1400px] w-full pl-6 sm:pl-10 md:pl-14 lg:pl-20 pr-0 flex flex-col md:flex-row items-center gap-12 md:gap-10 py-24 pt-32">
           {/* Left — text content */}
-          <div className="w-full md:w-[43%] flex flex-col justify-center pl-6 sm:pl-10 md:pl-14 lg:pl-20 xl:pl-[calc((100vw-1400px)/2+5rem)] pr-6 sm:pr-10 md:pr-4">
+          <div className="w-full md:w-[45%] flex flex-col justify-center pr-6 sm:pr-10 md:pr-0">
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -155,8 +134,8 @@ export default function Home() {
 
           </div>
 
-            {/* Right — profile image (bleeds to right edge) */}
-            <div className="w-full md:w-[57%] flex-shrink-0 relative md:pr-0">
+            {/* Right — profile image */}
+            <div className="w-full md:w-[55%] flex-shrink-0 relative md:ml-auto">
               <HeroImage />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -322,9 +301,18 @@ export default function Home() {
             SELECTED WORKS
           </TypingText>
 
-          <div className="h-16" />
-
-          <ProjectCarousel projects={projects} />
+          <div className="space-y-6">
+            {projects.map((project, i) => (
+              <ProjectCard
+                key={project.index}
+                index={project.index}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                delay={i * 0.15}
+              />
+            ))}
+          </div>
           </div>
         </section>
 
