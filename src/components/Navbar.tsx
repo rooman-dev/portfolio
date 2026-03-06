@@ -80,16 +80,12 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-    >
+    <div>
       <h3 className="text-[11px] tracking-[0.5em] uppercase text-white/30 mb-6 pb-2 border-b border-white/5">
         {title}
       </h3>
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -236,11 +232,8 @@ export default function Navbar() {
                 <Section title="At a Glance" delay={0.15}>
                   <div className="grid grid-cols-2 gap-5">
                     {stats.map((s, i) => (
-                      <motion.div
+                      <div
                         key={i}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
                         className="border border-white/10 p-6 sm:p-7 text-center hover:border-white/20 transition-colors duration-300"
                       >
                         <span className="block text-3xl sm:text-4xl font-bold text-white tracking-tight">
@@ -249,7 +242,7 @@ export default function Navbar() {
                         <span className="block text-[10px] sm:text-xs text-white/40 tracking-[0.25em] uppercase mt-2">
                           {s.label}
                         </span>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
                 </Section>

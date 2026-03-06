@@ -6,7 +6,7 @@ import HeroImage from "@/components/HeroImage";
 import FullpageScroll from "@/components/FullpageScroll";
 import Navbar from "@/components/Navbar";
 import TypingText from "@/components/TypingText";
-import { motion } from "framer-motion";
+
 
 /* ──────────────────────────────────────────────────────────
    PROJECTS DATA
@@ -50,14 +50,9 @@ export default function Home() {
           <div className="w-full flex flex-col md:flex-row items-center gap-12 md:gap-0 py-24 pt-32">
           {/* Left — text content */}
           <div className="w-full md:w-[45%] flex flex-col justify-center px-6 sm:px-10 md:pl-14 lg:pl-20 md:pr-10">
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-white/40 text-xs tracking-[0.5em] uppercase mb-10"
-            >
+            <p className="text-white/40 text-xs tracking-[0.5em] uppercase mb-10">
               Portfolio / 2026
-            </motion.p>
+            </p>
 
             <TypingText
               as="h1"
@@ -81,12 +76,7 @@ export default function Home() {
               AHMED
             </TypingText>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-12 w-full flex flex-col gap-3"
-            >
+            <div className="mt-12 w-full flex flex-col gap-3">
               {/* Line 1 — scrolls left */}
               <div className="overflow-hidden relative h-[28px]">
                 <div
@@ -130,19 +120,14 @@ export default function Home() {
                   Translating complex backend architecture into sharp, scalable solutions. I build software that solves real-world friction. &mdash;&nbsp;
                 </div>
               </div>
-            </motion.div>
+            </div>
 
           </div>
 
             {/* Right — profile image */}
             <div className="w-full md:w-[55%] flex-shrink-0 relative">
               <HeroImage />
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                className="absolute bottom-4 right-4 z-10"
-              >
+              <div className="absolute bottom-4 right-4 z-10">
                 <a
                   href="#contact"
                   onClick={(e) => {
@@ -153,7 +138,7 @@ export default function Home() {
                 >
                   Hire Me ?
                 </a>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
@@ -173,13 +158,7 @@ export default function Home() {
             WHY INNOVATE
           </TypingText>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="max-w-3xl text-white/50 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
-          >
+          <p className="max-w-3xl text-white/50 text-lg sm:text-xl md:text-2xl leading-relaxed font-light">
             Innovation isn&apos;t about novelty for its own sake &mdash; it&apos;s about
             refusing to accept friction as inevitable. Every system has a seam
             that can be{" "}
@@ -191,15 +170,9 @@ export default function Home() {
             <ScrollHighlight delay={0.7}>should do</ScrollHighlight>.
             The best engineering is invisible &mdash; you only notice when it&apos;s
             absent.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-end mt-10"
-          >
+          <div className="flex justify-end mt-10">
             <a
               href="#projects"
               onClick={(e) => {
@@ -210,7 +183,7 @@ export default function Home() {
             >
               Inspiration ?
             </a>
-          </motion.div>
+          </div>
 
           <div className="border-t border-white/10 pt-16 mt-20">
           <TypingText
@@ -222,12 +195,7 @@ export default function Home() {
           </TypingText>
 
           <div className="text-white/50 text-lg sm:text-xl leading-relaxed max-w-3xl space-y-8">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
+            <p>
               I build at the intersection of{" "}
               <ScrollHighlight delay={0.3}>
                 systems design
@@ -242,14 +210,9 @@ export default function Home() {
               </ScrollHighlight>
               , I focus on solving real problems with clean architecture
               and relentless iteration.
-            </motion.p>
+            </p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <p>
               My domain spans{" "}
               <ScrollHighlight delay={0.3}>
                 full-stack web development
@@ -264,16 +227,10 @@ export default function Home() {
               </ScrollHighlight>
               . Great software is invisible &mdash; it simply works,
               beautifully and reliably.
-            </motion.p>
+            </p>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex justify-end mt-10"
-          >
+          <div className="flex justify-end mt-10">
             <a
               href="https://docs.google.com/document/d/your-cv-id"
               target="_blank"
@@ -282,7 +239,7 @@ export default function Home() {
             >
               Download CV ?
             </a>
-          </motion.div>
+          </div>
           </div>
           </div>
         </section>
@@ -335,11 +292,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
 
             {/* Left — Contact form */}
-            <motion.form
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
+            <form
               className="flex-1 flex flex-col gap-6"
               action="https://formspree.io/f/your-form-id"
               method="POST"
@@ -384,16 +337,10 @@ export default function Home() {
                   Send Message ?
                 </button>
               </div>
-            </motion.form>
+            </form>
 
             {/* Right — Links & info */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="lg:w-[320px] flex flex-col justify-between"
-            >
+            <div className="lg:w-[320px] flex flex-col justify-between">
               <div className="flex flex-col gap-8">
                 <div>
                   <span className="text-[10px] tracking-[0.4em] uppercase text-white/30 block mb-3">
@@ -450,18 +397,12 @@ export default function Home() {
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-white/15 text-xs mt-20 tracking-[0.3em] uppercase"
-          >
+          <p className="text-white/15 text-xs mt-20 tracking-[0.3em] uppercase">
             &copy; 2026 Rooman Ahmed
-          </motion.p>
+          </p>
           </div>
         </section>
       </main>

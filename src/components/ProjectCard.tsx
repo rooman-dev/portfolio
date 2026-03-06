@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 /* ──────────────────────────────────────────────────────────
    ProjectCard
    ──────────────────────────────────────────────────────────
@@ -25,17 +23,7 @@ export default function ProjectCard({
   delay = 0,
 }: ProjectCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.7,
-        delay,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
-      className="group relative border-t border-white/10 py-10 sm:py-14"
-    >
+    <div className="group relative border-t border-white/10 py-10 sm:py-14">
       {/* Index number */}
       <span className="text-xs tracking-[0.4em] uppercase text-white/30 mb-4 block">
         {index}
@@ -64,6 +52,6 @@ export default function ProjectCard({
           View Project ?
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }
