@@ -325,10 +325,12 @@ export default function Home() {
           <TypingText
             as="h2"
             hoverStyle="solid"
-            className="text-[clamp(2.5rem,7vw,7rem)] font-bold leading-[0.85] tracking-tighter mb-32"
+            className="text-[clamp(2.5rem,7vw,7rem)] font-bold leading-[0.85] tracking-tighter"
           >
             LET&apos;S TALK
           </TypingText>
+
+          <div className="h-32" />
 
           <div className="flex flex-col lg:flex-row gap-16 lg:gap-20">
 
