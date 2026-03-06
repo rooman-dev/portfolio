@@ -325,7 +325,7 @@ export default function Home() {
           <TypingText
             as="h2"
             hoverStyle="solid"
-            className="text-[clamp(2.5rem,7vw,7rem)] font-bold leading-[0.85] tracking-tighter mb-14"
+            className="text-[clamp(2.5rem,7vw,7rem)] font-bold leading-[0.85] tracking-tighter mb-20"
           >
             LET&apos;S TALK
           </TypingText>
