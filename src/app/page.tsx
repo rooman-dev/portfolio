@@ -33,6 +33,27 @@ const projects = [
       "A real-time, push-to-talk voice communication platform built with Python and Socket Programming for low-latency audio streaming.",
     link: "https://github.com/rooman-dev/VoiceSnap",
   },
+  {
+    index: "04",
+    title: "Kaikebo",
+    description:
+      "A personal finance management application built with C++ and Object-Oriented Programming principles, inspired by traditional Japanese budgeting methods.",
+    link: "https://github.com/rooman-dev/Kaikebo",
+  },
+  {
+    index: "05",
+    title: "Project 5",
+    description:
+      "Description coming soon.",
+    link: "#",
+  },
+  {
+    index: "06",
+    title: "Project 6",
+    description:
+      "Description coming soon.",
+    link: "#",
+  },
 ];
 
 export default function Home() {
