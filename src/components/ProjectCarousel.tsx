@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /* ──────────────────────────────────────────────────────────
-   ProjectCarousel — Full-width horizontal project slides
+   ProjectCarousel — 3 projects per page, horizontal layout
    ────────────────────────────────────────────────────────── */
 
 interface Project {
@@ -17,6 +17,8 @@ interface Project {
 interface ProjectCarouselProps {
   projects: Project[];
 }
+
+const ITEMS_PER_PAGE = 3;
 
 const variants = {
   enter: (dir: number) => ({
@@ -34,11 +36,12 @@ const variants = {
 };
 
 export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
+  const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
   const [[page, direction], setPage] = useState([0, 0]);
 
   const paginate = (newDir: number) => {
     const next = page + newDir;
-    if (next < 0 || next >= projects.length) return;
+    if (next < 0 || next >= totalPages) return;
     setPage([next, newDir]);
   };
 
@@ -46,11 +49,12 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
     setPage([idx, idx > page ? 1 : -1]);
   };
 
-  const project = projects[page];
+  const startIdx = page * ITEMS_PER_PAGE;
+  const pageProjects = projects.slice(startIdx, startIdx + ITEMS_PER_PAGE);
 
   return (
     <div className="relative w-full">
-      {/* Project content */}
+      {/* Projects — 3 side by side */}
       <div className="relative overflow-hidden" style={{ minHeight: "320px" }}>
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
@@ -64,41 +68,48 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               x: { type: "tween", duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
               opacity: { duration: 0.3 },
             }}
-            className="w-full"
+            className="w-full flex flex-col sm:flex-row gap-6"
           >
-            {/* Index */}
-            <span className="text-xs tracking-[0.4em] uppercase text-white/30 mb-6 block">
-              {project.index}
-            </span>
+            {pageProjects.map((project) => (
+              <div
+                key={project.index}
+                className="flex-1 border border-white/10 p-6 lg:p-8 flex flex-col hover:border-white/25 transition-all duration-300"
+              >
+                {/* Index */}
+                <span className="text-xs tracking-[0.4em] uppercase text-white/25 mb-4 block">
+                  {project.index}
+                </span>
 
-            {/* Title */}
-            <h3 className="text-white text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-8">
-              {project.title}
-            </h3>
+                {/* Title */}
+                <h3 className="text-white text-2xl lg:text-3xl font-bold leading-tight mb-4">
+                  {project.title}
+                </h3>
 
-            {/* Description */}
-            <p className="text-white/45 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
-              {project.description}
-            </p>
+                {/* Description */}
+                <p className="text-white/40 text-sm lg:text-base leading-relaxed mb-6 flex-1">
+                  {project.description}
+                </p>
 
-            {/* Button */}
-            <a
-              href={project.link || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-14 py-5 bg-white text-black text-lg tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
-            >
-              View Project →
-            </a>
+                {/* Button */}
+                <a
+                  href={project.link || "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-fit px-8 py-3 bg-white text-black text-sm tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+                >
+                  View Project →
+                </a>
+              </div>
+            ))}
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Navigation — dots + arrows */}
-      <div className="flex items-center justify-between mt-14 border-t border-white/10 pt-8">
+      {/* Navigation — dots + page + arrows */}
+      <div className="flex items-center justify-between mt-10 border-t border-white/10 pt-6">
         {/* Dots */}
         <div className="flex gap-3">
-          {projects.map((_, i) => (
+          {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
@@ -111,7 +122,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
         {/* Page indicator */}
         <span className="text-white/30 text-sm tracking-widest">
-          {String(page + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+          {String(page + 1).padStart(2, "0")} / {String(totalPages).padStart(2, "0")}
         </span>
 
         {/* Arrows */}
@@ -127,7 +138,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
           </button>
           <button
             onClick={() => paginate(1)}
-            disabled={page === projects.length - 1}
+            disabled={page === totalPages - 1}
             className="w-12 h-12 border border-white/15 flex items-center justify-center hover:border-white hover:bg-white/5 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white">
