@@ -68,25 +68,25 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               x: { type: "tween", duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] },
               opacity: { duration: 0.3 },
             }}
-            className="w-full flex flex-col sm:flex-row gap-6"
+            className="w-full flex flex-col gap-4"
           >
             {pageProjects.map((project) => (
               <div
                 key={project.index}
-                className="flex-1 border border-white/10 p-6 lg:p-8 flex flex-col hover:border-white/25 transition-all duration-300"
+                className="border border-white/10 px-6 py-4 lg:px-8 lg:py-5 flex flex-col sm:flex-row sm:items-center gap-4 hover:border-white/25 transition-all duration-300"
               >
                 {/* Index */}
-                <span className="text-xs tracking-[0.4em] uppercase text-white/25 mb-4 block">
+                <span className="text-xs tracking-[0.4em] uppercase text-white/25 sm:w-12 shrink-0">
                   {project.index}
                 </span>
 
                 {/* Title */}
-                <h3 className="text-white text-2xl lg:text-3xl font-bold leading-tight mb-4">
+                <h3 className="text-white text-xl lg:text-2xl font-bold leading-tight sm:w-40 lg:w-48 shrink-0">
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-white/40 text-sm lg:text-base leading-relaxed mb-6 flex-1">
+                <p className="text-white/40 text-sm lg:text-base leading-relaxed flex-1">
                   {project.description}
                 </p>
 
@@ -95,7 +95,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
                   href={project.link || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-fit px-8 py-3 bg-white text-black text-sm tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
+                  className="inline-block w-fit shrink-0 px-6 py-2.5 bg-white text-black text-sm tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
                 >
                   View Project →
                 </a>
