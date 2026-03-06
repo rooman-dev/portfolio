@@ -16,7 +16,7 @@ export default function HeroImage() {
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="relative w-full h-[65vh] md:h-[85vh] overflow-hidden rounded-sm"
+      className="relative w-full h-[70vh] md:h-[92vh] overflow-hidden rounded-sm"
     >
       <Image
         src="/profile.png"

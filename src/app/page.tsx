@@ -68,9 +68,9 @@ export default function Home() {
           id="home"
           className="h-screen flex items-center overflow-hidden"
         >
-          <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col md:flex-row items-center gap-12 md:gap-10 py-24 pt-32">
+          <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col md:flex-row items-center gap-8 md:gap-4 py-24 pt-32">
           {/* Left — text content */}
-          <div className="w-full md:w-[50%] flex flex-col justify-center">
+          <div className="w-full md:w-[43%] flex flex-col justify-center">
             <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -156,7 +156,7 @@ export default function Home() {
           </div>
 
             {/* Right — profile image */}
-            <div className="w-full md:w-[50%] flex-shrink-0 relative">
+            <div className="w-full md:w-[57%] flex-shrink-0 relative">
               <HeroImage />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
