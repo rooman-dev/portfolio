@@ -1,7 +1,7 @@
 "use client";
 
 import ScrollHighlight from "@/components/ScrollHighlight";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import HeroImage from "@/components/HeroImage";
 import FullpageScroll from "@/components/FullpageScroll";
 import Navbar from "@/components/Navbar";
@@ -14,20 +14,41 @@ import TypingText from "@/components/TypingText";
 const projects = [
   {
     index: "01",
+    title: "Adsgeniuslab",
+    description:
+      "A comprehensive web solution for a digital marketing agency targeting the MENA region. Built with the PERN stack (PostgreSQL, Express.js, React.js, Node.js) featuring full RTL layout support, bilingual navigation, an AI chatbot for automated customer support, and a custom admin panel for real-time content management.",
+    link: "https://github.com/rooman-dev/agl-new",
+  },
+  {
+    index: "02",
+    title: "Quran Lessons",
+    description:
+      "A fully-functional Quran learning platform built for a client, featuring a clean UI, mobile-friendly layout, structured lesson flow, teacher profiles, online registration, and contact forms. Integrated SEO-friendly content with fast loading performance and modern design tailored for Islamic education services.",
+    link: "https://rooman-dev.github.io/QuranLessons/index.html",
+  },
+  {
+    index: "03",
+    title: "Kaikebo",
+    description:
+      "A personal finance management application built with C++ and RAD Studio, inspired by the Japanese Kakeibo budgeting method. Features intuitive UI for tracking expenses, mindful spending analysis, and financial awareness tools using OOP principles and file handling.",
+    link: "https://github.com/rooman-dev/Kaikebo",
+  },
+  {
+    index: "04",
     title: "DrKhan",
     description:
       "A hybrid desktop application built with Python FastAPI and SQLite, engineered to digitize paper-based clinic workflows into a secure, offline-first digital environment.",
     link: "https://github.com/rooman-dev/DrKhan",
   },
   {
-    index: "02",
+    index: "05",
     title: "Rosseta",
     description:
       "A C++ desktop application utilizing graph-based algorithms and De Bruijn graphs for DNA sequence generation and analysis.",
     link: "https://github.com/rooman-dev/Rosseta",
   },
   {
-    index: "03",
+    index: "06",
     title: "VoiceSnap",
     description:
       "A real-time, push-to-talk voice communication platform built with Python and Socket Programming for low-latency audio streaming.",
@@ -258,18 +279,7 @@ export default function Home() {
             SELECTED WORKS
           </TypingText>
 
-          <div className="space-y-6">
-            {projects.map((project, i) => (
-              <ProjectCard
-                key={project.index}
-                index={project.index}
-                title={project.title}
-                description={project.description}
-                link={project.link}
-                delay={i * 0.15}
-              />
-            ))}
-          </div>
+          <ProjectCarousel projects={projects} />
           </div>
         </section>
 
