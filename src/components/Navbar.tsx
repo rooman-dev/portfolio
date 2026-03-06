@@ -241,7 +241,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
-                        className="border border-white/10 bg-white/[0.02] p-6 sm:p-7 text-center hover:border-white/20 transition-colors duration-300"
+                        className="border border-white/10 p-6 sm:p-7 text-center hover:border-white/20 transition-colors duration-300"
                       >
                         <span className="block text-3xl sm:text-4xl font-bold text-white tracking-tight">
                           {s.value}
@@ -304,7 +304,7 @@ export default function Navbar() {
                     {certificates.map((cert, i) => (
                       <div
                         key={i}
-                        className="flex items-start justify-between border border-white/8 bg-white/[0.02] p-5 hover:border-white/15 transition-colors duration-300"
+                        className="flex items-start justify-between border border-white/10 p-5 hover:border-white/20 transition-colors duration-300"
                       >
                         <div>
                           <h4 className="text-sm sm:text-base font-semibold text-white">
