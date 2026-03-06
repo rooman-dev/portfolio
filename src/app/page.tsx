@@ -150,16 +150,6 @@ export default function Home() {
               </a>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.2 }}
-              className="mt-16"
-            >
-              <span className="block text-white/20 text-xs tracking-[0.3em] uppercase scroll-bounce">
-                Scroll ↓
-              </span>
-            </motion.div>
           </div>
 
             {/* Right — profile image */}
