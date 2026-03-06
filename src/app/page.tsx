@@ -65,7 +65,7 @@ export default function Home() {
               onMount
               className="text-[5rem] sm:text-[7rem] md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] tracking-tighter"
               delay={0.15}
-              speed={0.08}
+              speed={0.14}
             >
               ROOMAN
             </TypingText>
@@ -75,8 +75,8 @@ export default function Home() {
               hoverStyle="solid"
               onMount
               className="text-[5rem] sm:text-[7rem] md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] tracking-tighter"
-              delay={0.7}
-              speed={0.08}
+              delay={1.1}
+              speed={0.14}
             >
               AHMED
             </TypingText>
@@ -168,7 +168,7 @@ export default function Home() {
             as="h2"
             hoverStyle="solid"
             className="text-[clamp(2.5rem,7vw,7rem)] font-bold leading-[0.85] tracking-tighter mb-14"
-            speed={0.05}
+            speed={0.10}
           >
             WHY INNOVATE
           </TypingText>
