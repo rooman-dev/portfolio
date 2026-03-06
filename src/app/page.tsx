@@ -108,6 +108,28 @@ export default function Home() {
                   Driven by logic. Refined by design. I engineer scalable, full-stack ecosystems that transform complex friction into effortless performance. &mdash;&nbsp;
                 </div>
               </div>
+
+              {/* Line 3 — scrolls left */}
+              <div className="overflow-hidden relative h-[28px]">
+                <div
+                  className="ticker-track absolute whitespace-nowrap text-white/40 text-sm sm:text-base font-light"
+                  style={{ animation: 'ticker 28s linear infinite' }}
+                >
+                  Architecting logic. Designing function. I build high-performance software that turns complex problems into elegant, scalable solutions. &mdash;&nbsp;
+                  Architecting logic. Designing function. I build high-performance software that turns complex problems into elegant, scalable solutions. &mdash;&nbsp;
+                </div>
+              </div>
+
+              {/* Line 4 — scrolls right */}
+              <div className="overflow-hidden relative h-[28px]">
+                <div
+                  className="ticker-track absolute whitespace-nowrap text-white/40 text-sm sm:text-base font-light"
+                  style={{ animation: 'tickerReverse 22s linear infinite' }}
+                >
+                  Translating complex backend architecture into sharp, scalable solutions. I build software that solves real-world friction. &mdash;&nbsp;
+                  Translating complex backend architecture into sharp, scalable solutions. I build software that solves real-world friction. &mdash;&nbsp;
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
