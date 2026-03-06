@@ -3,6 +3,7 @@
 import ScrollHighlight from "@/components/ScrollHighlight";
 import ProjectCard from "@/components/ProjectCard";
 import HeroImage from "@/components/HeroImage";
+import FullpageScroll from "@/components/FullpageScroll";
 import Navbar from "@/components/Navbar";
 import TypingText from "@/components/TypingText";
 import { motion } from "framer-motion";
@@ -36,7 +37,7 @@ const projects = [
 
 export default function Home() {
   return (
-    <div className="bg-black h-full overflow-y-scroll snap-y snap-proximity">
+    <FullpageScroll>
       <Navbar />
 
       <main>
@@ -44,7 +45,7 @@ export default function Home() {
         {/* ════ HOME ════════════════════════════════════════ */}
         <section
           id="home"
-          className="h-screen flex items-center snap-start overflow-hidden"
+          className="h-screen flex items-center overflow-hidden"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 flex flex-col md:flex-row items-center gap-12 md:gap-10 py-24 pt-32">
           {/* Left — text content */}
@@ -149,7 +150,7 @@ export default function Home() {
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                  window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "contact" }));
                 }}
                 className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
               >
@@ -179,7 +180,7 @@ export default function Home() {
         {/* ════ ABOUT — WHY INNOVATE + BIO ═════════════════ */}
         <section
           id="about"
-          className="h-screen flex items-center snap-start overflow-y-auto"
+          className="h-screen flex items-center overflow-y-auto"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
@@ -222,7 +223,7 @@ export default function Home() {
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                window.dispatchEvent(new CustomEvent("scrollToSection", { detail: "projects" }));
               }}
               className="px-12 py-4 bg-white text-black text-base tracking-[0.2em] uppercase font-bold hover:bg-transparent hover:text-white border-2 border-white transition-all duration-300"
             >
@@ -308,7 +309,7 @@ export default function Home() {
         {/* ════ SELECTED WORKS ═════════════════════════════ */}
         <section
           id="projects"
-          className="h-screen flex items-center snap-start overflow-y-auto"
+          className="h-screen flex items-center overflow-y-auto"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
@@ -337,7 +338,7 @@ export default function Home() {
         {/* ════ CONTACT ════════════════════════════════════ */}
         <section
           id="contact"
-          className="h-screen flex items-center snap-start overflow-y-auto"
+          className="h-screen flex items-center overflow-y-auto"
         >
           <div className="mx-auto max-w-[1400px] w-full px-6 sm:px-10 md:px-14 lg:px-20 py-24">
           <TypingText
@@ -491,6 +492,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
+    </FullpageScroll>
   );
 }

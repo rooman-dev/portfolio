@@ -56,7 +56,7 @@ export default function Navbar() {
               href={link.href}
               onClick={(e) => {
                 e.preventDefault();
-                document.querySelector(link.href)?.scrollIntoView({ behavior: "smooth" });
+                window.dispatchEvent(new CustomEvent("scrollToSection", { detail: link.href.replace("#", "") }));
               }}
               className="px-5 py-2 text-[14px] font-medium text-white/60 tracking-[0.15em] uppercase transition-colors duration-300 hover:text-white shrink-0"
             >
