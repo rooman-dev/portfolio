@@ -126,7 +126,7 @@ export default function Navbar() {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="fixed top-6 left-1/2 -translate-x-1/2 z-50"
+        className="fixed top-2 left-1/2 -translate-x-1/2 z-50"
       >
         <div
           style={{
@@ -158,21 +158,19 @@ export default function Navbar() {
       </motion.nav>
 
       {/* Experience button — top right */}
-      <motion.button
-        initial={{ y: -30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-        onClick={() => setShowExp(!showExp)}
-        className="fixed top-6 right-0 z-50 bg-white text-black text-[14px] font-medium tracking-[1.5em] uppercase hover:bg-white/90 transition-all duration-300 shadow-lg"
-        style={{
-          paddingLeft: "1rem",
-          paddingRight: "1rem",
-          paddingTop: "0.5rem",
-          paddingBottom: "0.5rem",
-        }}
-      >
-        {showExp ? "Close" : "Experience"}
-      </motion.button>
+{/* Experience button — top right */}
+<button
+  onClick={() => setShowExp(!showExp)}
+  className="fixed top-2 right-0 z-50 bg-white text-black text-[14px] font-medium tracking-[1.5em] uppercase hover:bg-white/90 transition-all duration-300 shadow-lg"
+  style={{
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+    paddingTop: "0.5rem",
+    paddingBottom: "0.5rem",
+  }}
+>
+  {showExp ? "Close" : "Experience"}
+</button>
 
       {/* ════ Experience panel — slides in from right (40 vw) ════ */}
       <AnimatePresence>
@@ -214,18 +212,12 @@ export default function Navbar() {
                     as="h2"
                     hoverStyle="none"
                     onMount
-                    className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight"
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
                     speed={0.06}
                     delay={0.2}
                   >
                     EXPERIENCE
                   </TypingText>
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
-                    className="w-16 h-[2px] bg-white origin-left mt-3"
-                  />
                 </div>
 
                 {/* ── Stats grid ──────────────────────── */}
